@@ -477,6 +477,9 @@ color: #FFFFFF;
 .social-icon {
     fill: #f4f4fd;
 }
+.form-div {
+    margin-left: 80px;
+}
 .text-sub {
     margin-bottom: 16px;
     font-weight: 500;
@@ -493,7 +496,7 @@ color: #FFFFFF;
     gap: 24px;
 }
 .input-email {
-    border: 1px solid #fff;
+        border: 1px solid #fff;
         border-radius: 4px;
         width: 264px;
         height: 40px;
@@ -504,6 +507,7 @@ color: #FFFFFF;
             padding-left: 16px;
             box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
             color: #ffffff;
+            outline: transparent;
 
 }
 .submit-btn {
@@ -522,9 +526,16 @@ color: #FFFFFF;
         background-color: #4d5ae5;
         border: none;
         border-radius: 4px;
+        padding: 8px 24px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-icon {
     margin-left: 16px;
+    fill: #FFFFFF;
+}
+.submit-btn:hover,
+.submit-btn:focus {
+    background-color: #404bbf;
 }
 .modal-overlay {
     position: fixed;
@@ -532,13 +543,21 @@ color: #FFFFFF;
     left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-color:rgba(46, 47, 66, 0.4) ;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     transition:opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
         visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .modal-overlay.is-open {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -554,6 +573,14 @@ color: #FFFFFF;
     min-height: 584px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 72px 24px 24px 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fcfcfc;
+}
+.modal-overlay:not(.is-open) .modal {
+    transform: translate(-50%, -100%);
 }
 .modal-btn {
     position: absolute;
@@ -571,17 +598,18 @@ color: #FFFFFF;
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-btn:hover
+.modal-btn:hover,
 .modal-btn:focus {
     background-color: #404bbf;
     border: none;
 }
 .modal-icon {
+    fill: #2e2f42;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-icon:hover
-.modal-icon:focus {
-    fill: #ffffff;
+.modal-btn:hover .modal-icon,
+.modal-btn:focus .modal-icon {
+    fill: #fff;
 }
 .modal-text {
     font-weight: 500;
@@ -603,8 +631,13 @@ color: #FFFFFF;
         display: block;
         margin-bottom: 4px;      
 }
+
 .div-input {
     position: relative;
+}
+.div-input:hover .div-icon,
+.div-input:focus-within .div-icon {
+    fill: #4d5ae5;
 }
 .input {
     width: 100%;
@@ -614,11 +647,13 @@ color: #FFFFFF;
     background-color: transparent;
     padding-left: 38px;
     outline: transparent;
+    padding-left: 38px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input:focus {
     border-color: #4D5AE5;
 }
+
 .div-icon {
     position: absolute;
     left: 16px;
@@ -659,7 +694,7 @@ color: #FFFFFF;
     letter-spacing: 0.04em;
     color: #8e8f99;
 }
-.span-label {
+.span-icon {
     width: 16px;
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -669,5 +704,51 @@ color: #FFFFFF;
     align-items: center;
     justify-content: center;
     fill: transparent;
-    
+    margin-right: 8px;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.visually-hidden:checked+.checkbox-title>.checkbox-icon {
+    background-color: #404bbf;
+    fill: #f4f4fd;
+    border: none;
+}
+
+.privacy-policy {
+    color: #4d5ae5;
+    text-decoration: underline;
+}
+.send-btn {
+    color: #fff;
+    background-color: #4d5ae5;
+    display: block;
+    margin: 0 auto;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #4d5ae5;
+    min-width: 169px;
+    height: 56px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.send-btn:hover,
+.send-btn:focus {
+    background-color: #404bbf;
 }
