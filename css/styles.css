@@ -732,7 +732,7 @@ background-color: #404bbf;
 input[type="checkbox"]:checked+.checkbox-label .custom-checkbox {
     background-color: var(--accent-color, #404bbf);
     border: none;
-    fill: var(--icon-color, #F4F4FD);
+    fill:  #F4F4FD;
 }
 
 .privacy-link {
