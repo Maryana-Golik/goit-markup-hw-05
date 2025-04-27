@@ -715,8 +715,8 @@ background-color: #404bbf;
     gap: 8px;
 }
 
-.custom-checkbox {
-    display:inline-flex;
+.checkbox-span {
+    display: inline-flex;
     width: 16px;
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
